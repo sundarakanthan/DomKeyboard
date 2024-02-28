@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="key-container">
+    <div class="key">M</div>
+    <div class="key">O</div>
+    <div class="key">E</div>
+    <div class="key">N</div>
+  </div>
+
+  <script>
+    
+    var aud1 = new Audio("/raidermama1.mp3");
+    var aud2 = new Audio("/raidermama2.mp3");
+    var aud3 = new Audio("/raidermama3.mp3");
+    var aud4 = new Audio("/raidermama4-trimmed.mp3");
+
+    document.addEventListener("keypress", function(event) {
+      makeMoen(event.key); 
+    });
+
+    function makeMoen(keyCode) {
+      switch (keyCode) {
+        case 'm': // Character 'm'
+          aud1.play(); 
+          break;
+        case 'o': // Character 'o'
+          aud2.play();
+          break;
+        case 'e': // Character 'e'
+          aud3.play();
+          break;
+        case 'n': // Character 'n'
+          aud4.play();
+          break;
+        default:
+          console.log("Unrecognized key:", keyCode); // Log unrecognized keys
+    }
+}
+  </script>
+</body>
+</html>
