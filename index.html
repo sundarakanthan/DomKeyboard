@@ -21,6 +21,34 @@
     var aud3 = new Audio("raidermama3.mp3");
     var aud4 = new Audio("raidermama4-trimmed.mp3");
 
+    let keybutton = document.querySelectorAll(".key")
+
+    //The queryselector only selects a node. To select the absolute element we have to use index.
+    keybutton.forEach(function(element){
+      element.addEventListener("click",function(){
+        switch(element.textContent){
+        case 'M':
+          aud1.play();
+          break;
+        case 'O':
+        aud2.play();
+          break;
+          case 'U':
+          aud3.play();
+          break;
+          case 'N':
+          aud4.play();
+          break;  
+
+      }
+      }
+        
+    )
+    })
+
+  
+
+
     document.addEventListener("keypress", function(event) {
       makeMoen(event.key); 
     });
